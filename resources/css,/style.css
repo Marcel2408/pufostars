@@ -1,0 +1,336 @@
+/*INITIAL SETUP*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #fff;
+    color: rgb(42, 42, 42);
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 10px;/*easier to later use rem (multiply * 10)*/
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-size: 2rem;/*standard for the text*/
+}
+
+/*GRID*/
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/*REUSABLE*/
+.section {
+    padding: 10rem 0;
+}
+
+.box {
+    border: 2px solid #e67e22;
+    padding: 1%;
+    text-align: center;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0.5rem 0.5rem 1rem #555;
+}
+
+.margin-bottom {
+    margin-bottom: 5rem;
+}
+
+
+/*HEADINGS*/
+
+.heading--1,
+.heading--2,
+.heading--3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.heading--1 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 4.4rem;/*4.4 times the root font size*/
+    word-spacing: 4px;
+    font-weight: 300;
+}
+
+.heading--2 {
+    font-size: 3.3rem;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.heading--2:after {/*content to appear right after the heading--2 element (the orange line)*/
+    display: block;
+    height: .2rem;
+    background-color: #e67e22;
+    content: ' ';/*always specify if we want any content inside the :after*/
+    width: 10rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.heading--3 {
+    font-size: 2.2rem;/*22px*/
+    margin-bottom: 1.5rem;
+}
+
+/*PARAGRAPHS*/
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;/*this will make the text to be centered: width of 70, each side 15*/
+}
+
+/*BUTTONS*/
+
+.btn:link,/*:link means the normal a element at its initial state*/
+.btn:visited,/*:visited means the element after being clicked*/
+input[type="submit"] {
+    display: inline-block; /*inline elements but with padding and margins properties*/
+    padding: 1rem 3rem;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all .2s;/*will make all hover and active properties to change over .2s time*/
+}
+
+.btn--full:link,
+.btn--full:visited,
+input[type="submit"] {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;/*to keep the same size as the btn--ghost, due to border-box model*/
+    color: #fff;
+    margin-right: 3rem;
+}
+
+.btn--ghost:link,
+.btn--ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover,/*written down here, bc rule 66 would overwrite this one bc of cascade parsing*/
+.btn:active,
+input[type="submit"]:hover,
+input[type="submit"]:active
+ {/*:hover is when the mouse is over the btn, and :active when it's being clicked*/
+    background-color: #cf6d17;
+}
+
+.btn--full:hover,
+.btn--full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn--ghost:hover,
+.btn--ghost:active {
+    color: #fff;
+}
+
+/*HEADER-SECTION*/
+
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.70), rgba(0, 0, 0, 0.70)), url(../img\,/tevarak-phanduang-eOvv4N6yNmk-unsplash.jpg);
+    height: 100vh;/*100% of the viewport*/
+    background-size: cover;
+    background-position: center;
+}
+
+.header__logo {
+    height: 10rem;
+    width: auto;
+    float: left;
+    margin-top: 2rem;
+}
+
+.header__main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 5.5rem;
+}
+
+.header__main-nav li {
+    display: inline-block;
+    margin-left: 4rem;
+}
+
+.header__main-nav li a:link,
+.header__main-nav li a:visited {
+    padding-bottom: .8rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .2s;
+}
+
+.header__main-nav li a:hover,
+.header__main-nav li a:active {
+    border-bottom: 2px solid #cf6d17;
+}
+
+.header__text-box {
+    position: absolute;
+    width: 74%;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+/*PLAYERS-SECTION*/
+
+.players {
+
+}
+
+.players__stats {
+    list-style: none;
+    margin-top: 2.5rem;
+}
+
+.players__icons {
+    float: left;
+    position: relative;
+    left: 39%;
+    margin-right: 2rem;
+}
+
+.players__stats li {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    
+}
+
+.players__num {
+    font-size: 4.5rem;
+    
+}
+
+.players__name {
+    font-weight: 400;
+    text-transform: uppercase; 
+    line-height: 145%;
+}
+
+/*SECTION GAMES*/
+
+.games__article {
+    float: left;
+    /*padding-right: 3rem;*/
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.games__list {
+    float: left;
+}
+
+.games__result {
+    font-size: 4.5rem;
+    width: 80%;
+    margin-left: 10%;
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.games__logo {
+    /* float: left;
+    margin: 2rem 3rem 2rem 3rem; */
+    height: 10rem;
+    width: auto;
+    margin-left: 2em;
+}
+
+.games__score {
+    /* float: left;
+    margin: 4rem 4rem 0; */
+}
+
+.games__rivals {
+    /* float: left;
+    margin-top: 4rem; */
+}
+
+.games__subtitle,
+.games__text {
+    clear: both;
+    text-align: justify;
+    line-height: 160%;
+}
+
+
+/*          FORM            */
+.contact-form {
+    width: 60%;
+    margin-left: 20%; /*if width = 60% the white-space is 40%. Therefore, the element is centered*/
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: .5em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+input[type="checkbox"],
+label[for="news"] {
+    margin: 1em .5em 1em 0;
+}
+
+input[type="submit"] { margin-bottom: 3em; }
+
+*:focus {
+    outline: none;
+}
+
+/*FOOTER*/
+
+.footer {
+    background-color: #e67e22;
+    padding: 4rem;
+    text-align: right;
+}
+
+.footer__social:link,
+.footer__social:visited {
+    float: right;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    transition: color .2s;
+}
+
+.footer__social:hover,
+.footer__social:active {
+    color: rgb(42, 42, 42);
+}
+
+.footer_copyright {
+    float: left;
+    position: relative;
+    top: 0.7rem;
+    font-size: initial;
+    width: 70%;
+    text-align: left;
+}
