@@ -152,4 +152,6 @@
     .players .col:first-child {margin-left: 10%;}
 
     .players__stats { width: 40%;}
+
+    .games__logo {margin-left: 0;}
 }
